@@ -2,7 +2,7 @@
 const express = require('express');
 
 // CUSTOM LIBS
-const profileHandlers = require('./handlers/Profile');
+const { ProfileRouter } = require('./routers/Profile');
 
 // Creating new express app
 const app = express();
@@ -15,10 +15,8 @@ app.get('/', (req, res) => {
     res.send(200);
 });
 
-// Endpoint ot fetch user profile data
-app.get('/in/:username', (req, res) => {
-    res.send(profileHandlers.getUserProfile(req.params.username));
-});
+// Adding routers
+app.use('/in', ProfileRouter);
 
 // Listening on the given port
 app.listen(port, () => {
