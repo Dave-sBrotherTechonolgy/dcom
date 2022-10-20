@@ -1,4 +1,4 @@
-export const Users = [
+const Users = [
     {
         "name": "Firstname1 Lastname1",
         "description": "Description1",
@@ -44,3 +44,5 @@ export const Users = [
         ]
     }
 ];
+
+module.exports.Users = Users;
