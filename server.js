@@ -7,9 +7,14 @@ const app = express();
 // Getting the port to listen on
 const port = process.env.APP_PORT;
 
-// Dummy endpoint
+// Check if server is alive or not
 app.get('/', (req, res) => {
     res.send(200);
+});
+
+// Endpoint ot fetch user profile data
+app.get('/in/:username', (req, res) => {
+    res.send(`Name: ${req.params.username}`);
 });
 
 // Listening on the given port
