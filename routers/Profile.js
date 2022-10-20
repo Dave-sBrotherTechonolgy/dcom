@@ -11,8 +11,8 @@ const ProfileRouter = express.Router();
 
 // Adding router endpoints
 
-ProfileRouter.get('/:userName', (req, res) => {
-    res.send(profileHandlers.getUserProfile(req.params.username));
+ProfileRouter.get('/:userName', async (req, res) => {
+    res.send(await profileHandlers.getUserProfile(req.params.userName));
 });
 
 module.exports.ProfileRouter = ProfileRouter;
