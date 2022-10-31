@@ -1,8 +1,8 @@
 // PACKAGE LIBS
-const express = require('express');
+import express from 'express';
 
 // CUSTOM LIBS
-const { ProfileRouter } = require('./routers/Profile');
+import ProfileRouter from './routers/Profile';
 
 // Creating new express app
 const app = express();
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 // Adding routers
-app.use('/in', ProfileRouter);
+app.use('/dev', ProfileRouter);
 
 // Listening on the given port
 app.listen(port, () => {

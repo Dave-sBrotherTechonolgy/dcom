@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -L --inspect=0.0.0.0:3001 server.js"
+    "start": "nodemon -L --inspect=0.0.0.0:3001 --experimental-specifier-resolution=node server.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,18 +1,18 @@
 // This file contains various methods for connecting to the database
 
 // PACKAGE LIBS
-const { MongoClient } = require('mongodb');
+import  { MongoClient } from 'mongodb';
 
 // CUSTOM LIBS
-const urls = require('../configs/urls');
+import { urls } from '../configs/urls';
 
 // Creating a new mongo client
-const client = new MongoClient(urls.db.url);
+export const client = new MongoClient(urls.db.url);
 
 /**
  * @summary Stores the database structure
  */
-const dbConfig = {
+export const dbConfig = {
     "dbName": "profiles",
     "collections": {
         "Profiles": "developers"
@@ -22,7 +22,7 @@ const dbConfig = {
 /**
  * @summary Connects to the mongodb server
  */
-const connectDB = async () => {
+export const connectDB = async () => {
     try {
         // Connecting to the client
         await client.connect();
@@ -31,7 +31,3 @@ const connectDB = async () => {
         console.log("Failed to connect to mongodb server");
     }
 };
-
-module.exports.dbConfig = dbConfig;
-module.exports.client = client;
-module.exports.connectDB = connectDB;

@@ -1,10 +1,10 @@
 // This file contains various routes related to user profile
 
 // PACKAGE LIBS
-const express = require('express');
+import express from 'express';
 
 // CUSTOM LIBS
-const profileHandlers = require('../handlers/Profile');
+import * as profileHandlers from '../handlers/Profile';
 
 // Creating a new Router
 const ProfileRouter = express.Router();
@@ -46,4 +46,4 @@ ProfileRouter.get('/:id/languages', async (req, res) => {
     res.send(await profileHandlers.getDevLanguages(req.params.id));
 });
 
-module.exports.ProfileRouter = ProfileRouter;
+export default ProfileRouter;
