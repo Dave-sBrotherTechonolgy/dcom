@@ -1,7 +1,6 @@
 // This file contains various memthods that handle fetching data related to user profile
 
 // CUSTOM LIBS
-const { Users } = require('../data/test/User');
 const { client, dbConfig, connectDB } = require('../data/connector');
 
 /**
