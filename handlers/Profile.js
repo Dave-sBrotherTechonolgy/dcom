@@ -5,14 +5,14 @@ const { client, dbConfig, connectDB } = require('../data/connector');
 
 /**
  * @returns The profile data of the user with the given username
- * @param {*} userName The username of the user whose profile data is to fetched
+ * @param {*} id The id of the user whose profile data is to fetched
  */
-const getUserProfile  = async (userName) => {
+const getUserProfile  = async (id) => {
     // Connecting to database
     await connectDB();
 
     // Fetching data
-    const data = await client.db(dbConfig.dbName).collection(dbConfig.collections.Profiles).findOne({ name: userName });
+    const data = await client.db(dbConfig.dbName).collection(dbConfig.collections.Profiles).findOne({ id: id });
 
     return data;
 };

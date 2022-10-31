@@ -13,9 +13,9 @@ const client = new MongoClient(urls.db.url);
  * @summary Stores the database structure
  */
 const dbConfig = {
-    "dbName": "d-community",
+    "dbName": "profiles",
     "collections": {
-        "Profiles": "profiles"
+        "Profiles": "developers"
     }
 };
 
