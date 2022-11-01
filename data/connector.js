@@ -4,10 +4,10 @@
 import  { MongoClient } from 'mongodb';
 
 // CUSTOM LIBS
-import { urls } from '../configs/urls';
+import config from '../configs/config';
 
 // Creating a new mongo client
-export const client = new MongoClient(urls.db.url);
+export const client = new MongoClient(config.db_url);
 
 /**
  * @summary Stores the database structure

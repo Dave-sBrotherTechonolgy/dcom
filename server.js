@@ -2,7 +2,7 @@
 import express from 'express';
 
 // CUSTOM LIBS
-import ProfileRouter from './routers/Profile';
+import ProfileController from './controllers/ProfileController';
 
 // Creating new express app
 const app = express();
@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
     res.send(200);
 });
 
-// Adding routers
-app.use('/dev', ProfileRouter);
+// Adding controllers for varoius sub routes
+app.use('/dev', ProfileController);
 
 // Listening on the given port
 app.listen(port, () => {
