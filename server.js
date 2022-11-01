@@ -20,5 +20,5 @@ app.use('/dev', ProfileController);
 
 // Listening on the given port
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log(`Listening on port ${port} of localhost`);
 });
